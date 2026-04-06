@@ -27,6 +27,7 @@ function BrowserDemo() {
         },
       ]);
     },
+    onAudio: () => {},
     onError: (error: unknown) => {
       console.error("Conversation error:", error);
       setStatus("idle");
