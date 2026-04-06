@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: "Citadel Leads <onboarding@resend.dev>",
-      to: "akayaian@gmail.com",
+      to: "alex@lightshifthealth.com",
       subject: `New consultation request: ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 500px;">
