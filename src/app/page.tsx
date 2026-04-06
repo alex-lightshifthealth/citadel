@@ -62,9 +62,10 @@ export default function Home() {
                 </h1>
 
                 <p className="mt-5 max-w-md text-[17px] leading-relaxed text-ink-secondary">
-                  When someone gets arrested at 2&nbsp;a.m., they call lawyers.
-                  The first one who answers gets the retainer. Citadel picks up
-                  every call, qualifies the lead, and books the consultation.
+                  When someone gets arrested at 2&nbsp;a.m., they search for
+                  lawyers and start calling. Citadel gets you to the top of
+                  Google and AI search, then answers every call, qualifies the
+                  lead, and books the consultation.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -400,8 +401,66 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Social proof ── */}
+        {/* ── SEO & Visibility ── */}
         <section className="bg-cream px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+              <div>
+                <p className="text-[13px] font-medium uppercase tracking-widest text-rust">
+                  Get found first
+                </p>
+                <h2
+                  className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-ink"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Answering calls is half the battle. Getting them is the other half.
+                </h2>
+                <p className="mt-4 text-[16px] leading-relaxed text-ink-muted">
+                  When someone searches &ldquo;criminal defense lawyer near me&rdquo;
+                  at 2&nbsp;a.m., you need to be the first result they see — on
+                  Google, on AI answer engines, everywhere. Citadel doesn&rsquo;t
+                  just answer your phone. It helps you rank.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Google Business optimization",
+                    desc: "We set up and optimize your Google Business profile — photos, reviews strategy, categories, and posts that rank.",
+                  },
+                  {
+                    title: "AI search visibility",
+                    desc: "ChatGPT, Perplexity, and Google AI Overviews are how people find lawyers now. We make sure they recommend you.",
+                  },
+                  {
+                    title: "Local SEO",
+                    desc: "Keyword-optimized website content, citation building, and backlink strategy for your practice area and city.",
+                  },
+                  {
+                    title: "Review generation",
+                    desc: "Automated review requests after every consultation. More 5-star reviews means higher rankings and more calls.",
+                  },
+                ].map((feature) => (
+                  <div
+                    key={feature.title}
+                    className="rounded-xl border border-border bg-white p-5"
+                  >
+                    <h3 className="text-[14px] font-semibold text-ink">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-ink-muted">
+                      {feature.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Social proof ── */}
+        <section className="px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="text-center text-[13px] font-medium uppercase tracking-widest text-rust">
               From attorneys like you
@@ -500,6 +559,9 @@ export default function Home() {
                     "Bilingual (English & Spanish)",
                     "Dedicated business phone number",
                     "Email & SMS notifications",
+                    "Google Business profile optimization",
+                    "Local SEO & AI search visibility",
+                    "Automated review generation",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <svg
