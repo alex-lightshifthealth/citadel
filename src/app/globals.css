@@ -51,6 +51,11 @@ html {
   background: rgba(198, 65, 16, 0.12);
 }
 
+a[href],
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 details summary {
   cursor: pointer;
   list-style: none;
