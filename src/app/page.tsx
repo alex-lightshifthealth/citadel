@@ -1,4 +1,5 @@
 import { CallDemo } from "./call-demo";
+import { ConsultationForm } from "./consultation-form";
 
 export default function Home() {
   return (
@@ -652,32 +653,45 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Final CTA ── */}
+        {/* ── Final CTA / Form ── */}
         <section id="book" className="px-6 py-20 sm:py-28">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2
-              className="text-[clamp(1.75rem,5vw,3rem)] leading-[1.12] tracking-[-0.02em] text-ink"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Stop losing clients to your voicemail
-            </h2>
-            <p className="mx-auto mt-4 max-w-lg text-[16px] leading-relaxed text-ink-muted">
-              We&rsquo;ll walk you through setup, customize the intake for your
-              case types, and have you live in under a week.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a
-                href="mailto:hello@citadel.ai"
-                className="w-full rounded-full bg-rust px-7 py-3.5 text-center text-[15px] font-medium text-white transition-colors hover:bg-rust-hover sm:w-auto"
-              >
-                Book a Consultation
-              </a>
-              <a
-                href="mailto:hello@citadel.ai"
-                className="w-full rounded-full border border-border px-7 py-3.5 text-center text-[15px] font-medium text-ink transition-colors hover:bg-cream sm:w-auto"
-              >
-                Set Up Your AI Receptionist
-              </a>
+          <div className="mx-auto max-w-6xl">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <div>
+                <h2
+                  className="text-[clamp(1.75rem,5vw,3rem)] leading-[1.12] tracking-[-0.02em] text-ink"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Stop losing clients to your voicemail
+                </h2>
+                <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-ink-muted">
+                  We&rsquo;ll walk you through setup, customize the intake for
+                  your case types, and have you live in under a week.
+                </p>
+                <ul className="mt-6 space-y-3 text-[14px] text-ink-secondary">
+                  {[
+                    "Free 15-minute consultation",
+                    "Custom intake setup for your practice",
+                    "Live in under a week",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <svg
+                        className="h-4 w-4 shrink-0 text-rust"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M3 8.5L6.5 12L13 4" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <ConsultationForm />
             </div>
           </div>
         </section>
