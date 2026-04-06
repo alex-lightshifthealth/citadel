@@ -43,8 +43,9 @@ function BrowserDemo() {
     setStatus("connecting");
     setMessages([]);
     try {
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-      await conversation.startSession({ agentId: AGENT_ID });
+      await conversation.startSession({
+        agentId: AGENT_ID,
+      });
     } catch (error) {
       console.error("Failed to start:", error);
       setStatus("idle");
