@@ -183,31 +183,105 @@ function BrowserDemo() {
 }
 
 function PhoneDemo() {
-  return (
-    <div className="flex flex-col items-center justify-center px-5 py-12 text-center">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cream">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          className="text-ink-muted"
+  const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "calling" | "active" | "done" | "error"
+  >("idle");
+
+  async function handleCall(e: React.FormEvent) {
+    e.preventDefault();
+    if (!phone.trim()) return;
+
+    setStatus("calling");
+    try {
+      const res = await fetch("/api/demo-call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: phone.trim() }),
+      });
+      if (res.ok) {
+        setStatus("active");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "active") {
+    return (
+      <div className="flex flex-col items-center justify-center px-5 py-12 text-center">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#16a34a"
+            strokeWidth="1.5"
+          >
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          </svg>
+        </div>
+        <p className="mt-3 text-[15px] font-medium text-ink">
+          Calling you now...
+        </p>
+        <p className="mt-1 text-[13px] text-ink-muted">
+          Pick up the phone to talk to Citadel
+        </p>
+        <button
+          onClick={() => {
+            setStatus("idle");
+            setPhone("");
+          }}
+          className="mt-4 text-[13px] font-medium text-rust"
         >
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-        </svg>
+          Done
+        </button>
       </div>
-      <p className="mt-3 text-[15px] font-medium text-ink">
-        Phone demo coming soon
-      </p>
-      <p className="mt-1 max-w-[260px] text-[13px] text-ink-muted">
-        Try the browser demo now, or{" "}
-        <a href="#book" className="font-medium text-rust">
-          book a consultation
-        </a>{" "}
-        and we&rsquo;ll call you for a live walkthrough.
-      </p>
+    );
+  }
+
+  return (
+    <div className="px-5 py-6">
+      <div className="text-center">
+        <p className="text-[14px] font-medium text-ink">Get a demo call</p>
+        <p className="mt-1 text-[13px] text-ink-muted">
+          Enter your number and Citadel will call you
+        </p>
+      </div>
+
+      <form onSubmit={handleCall} className="mt-5">
+        <div className="flex gap-2">
+          <div className="flex flex-1 overflow-hidden rounded-lg border border-border focus-within:border-rust focus-within:ring-1 focus-within:ring-rust">
+            <div className="flex shrink-0 items-center gap-1.5 border-r border-border bg-warm-bg px-3">
+              <span className="text-[15px]">🇺🇸</span>
+              <span className="text-[14px] text-ink-muted">+1</span>
+            </div>
+            <input
+              type="tel"
+              required
+              placeholder="(555) 123-4567"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="flex-1 bg-white px-3 py-3 text-[14px] text-ink placeholder:text-ink-muted/60 focus:outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={status === "calling"}
+            className="shrink-0 rounded-lg bg-rust px-5 py-3 text-[14px] font-medium text-white transition-colors hover:bg-rust-hover disabled:opacity-60"
+          >
+            {status === "calling" ? "Calling..." : "Call Me"}
+          </button>
+        </div>
+        {status === "error" && (
+          <p className="mt-2 text-[13px] text-red-600">
+            Something went wrong. Please try again.
+          </p>
+        )}
+      </form>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 const AGENT_ID = "agent_7501knj7cjgqfxja8qtyysttqxgh";
+const PHONE_NUMBER_ID = "phnum_4501knj8c8ggfrv86p81sy5x6tx5";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -21,7 +22,7 @@ export async function POST(request: Request) {
 
   try {
     const res = await fetch(
-      `https://api.elevenlabs.io/v1/convai/agents/${AGENT_ID}/call`,
+      "https://api.elevenlabs.io/v1/convai/twilio/outbound-call",
       {
         method: "POST",
         headers: {
@@ -29,7 +30,9 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          phone_number: normalized,
+          agent_id: AGENT_ID,
+          agent_phone_number_id: PHONE_NUMBER_ID,
+          to_number: normalized,
         }),
       }
     );
@@ -41,7 +44,7 @@ export async function POST(request: Request) {
     }
 
     const data = await res.json();
-    return NextResponse.json({ ok: true, call_id: data.call_id });
+    return NextResponse.json({ ok: true, conversation_id: data.conversation_id });
   } catch (error) {
     console.error("Call error:", error);
     return NextResponse.json({ error: "Failed to initiate call" }, { status: 500 });
