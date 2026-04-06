@@ -11,7 +11,7 @@ export default function Home() {
             className="text-[20px] font-semibold tracking-[-0.02em] text-ink"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            citadel
+            Citadel
           </a>
           <div className="flex items-center gap-8">
             <a
@@ -629,7 +629,7 @@ export default function Home() {
             className="text-[18px] font-semibold tracking-[-0.02em] text-ink"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            citadel
+            Citadel
           </a>
           <p className="text-[13px] text-ink-muted">
             &copy; {new Date().getFullYear()} Citadel. All rights reserved.
