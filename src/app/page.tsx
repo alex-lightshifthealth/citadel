@@ -1,4 +1,5 @@
 import { CallDemo } from "./call-demo";
+import { LiveDemo } from "./live-demo";
 import { ConsultationForm } from "./consultation-form";
 
 export default function Home() {
@@ -262,15 +263,29 @@ export default function Home() {
                 className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-ink"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Hear how Citadel handles a call
+                Talk to Citadel right now
               </h2>
               <p className="mt-4 text-[16px] leading-relaxed text-ink-muted">
-                This is a simulated call showing how Citadel qualifies a lead and books a consultation at 2&nbsp;a.m.
+                Try a live conversation with our AI receptionist, or watch a
+                sample call to see how it handles a 2&nbsp;a.m. DUI intake.
               </p>
             </div>
 
-            <div className="mx-auto mt-12 max-w-lg">
-              <CallDemo />
+            <div className="mx-auto mt-12 grid max-w-4xl gap-8 lg:grid-cols-2">
+              {/* Live demo */}
+              <div>
+                <p className="mb-3 text-[13px] font-medium text-ink-muted">
+                  Live demo
+                </p>
+                <LiveDemo />
+              </div>
+              {/* Sample call */}
+              <div>
+                <p className="mb-3 text-[13px] font-medium text-ink-muted">
+                  Sample call
+                </p>
+                <CallDemo />
+              </div>
             </div>
           </div>
         </section>
