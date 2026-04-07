@@ -58,16 +58,15 @@ export default function Home() {
                   className="mt-6 text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.08] tracking-[-0.02em] text-ink"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Your front office,
-                  <br />
-                  <span className="italic">always on</span>
+                  Never miss a<br />
+                  <span className="italic">high-value lead</span>
                 </h1>
 
                 <p className="mt-5 max-w-md text-[17px] leading-relaxed text-ink-secondary">
-                  When someone gets arrested at 2&nbsp;a.m., they search for
-                  lawyers and start calling. Citadel gets you to the top of
-                  Google and AI search, then answers every call, qualifies the
-                  lead, and books the consultation.
+                  When someone gets arrested at 2&nbsp;a.m., their family starts
+                  calling attorneys. The first one who answers books the retainer.
+                  Citadel answers every call, qualifies the lead, and books the
+                  consultation — so you never lose a client to voicemail again.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -417,45 +416,45 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── SEO & Visibility ── */}
+        {/* ── Compliance & Trust ── */}
         <section className="bg-cream px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
               <div>
                 <p className="text-[13px] font-medium uppercase tracking-widest text-rust">
-                  Get found first
+                  Ethics & compliance
                 </p>
                 <h2
                   className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-ink"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Answering calls is half the battle. Getting them is the other half.
+                  Built for the standard your bar requires
                 </h2>
                 <p className="mt-4 text-[16px] leading-relaxed text-ink-muted">
-                  When someone searches &ldquo;criminal defense lawyer near me&rdquo;
-                  at 2&nbsp;a.m., you need to be the first result they see — on
-                  Google, on AI answer engines, everywhere. Citadel doesn&rsquo;t
-                  just answer your phone. It helps you rank.
+                  AI in legal raises real questions — confidentiality, privilege,
+                  supervision, consent. We built Citadel around the ABA&rsquo;s
+                  guidance on AI use and the latest state bar ethics opinions, so
+                  you can adopt it with confidence.
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
                   {
-                    title: "Google Business optimization",
-                    desc: "We set up and optimize your Google Business profile — photos, reviews strategy, categories, and posts that rank.",
+                    title: "End-to-end encryption",
+                    desc: "All calls encrypted in transit and at rest. Your client communications stay protected.",
                   },
                   {
-                    title: "AI search visibility",
-                    desc: "ChatGPT, Perplexity, and Google AI Overviews are how people find lawyers now. We make sure they recommend you.",
+                    title: "No AI training on your data",
+                    desc: "Call data is never used to train models. Your conversations remain yours — period.",
                   },
                   {
-                    title: "Local SEO",
-                    desc: "Keyword-optimized website content, citation building, and backlink strategy for your practice area and city.",
+                    title: "Privilege-aware design",
+                    desc: "Callers are informed they're speaking with an AI assistant. Consent and disclosure built into every call flow.",
                   },
                   {
-                    title: "Review generation",
-                    desc: "Automated review requests after every consultation. More 5-star reviews means higher rankings and more calls.",
+                    title: "BAA & compliance support",
+                    desc: "We sign Business Associate Agreements and work with your firm to meet state-specific ethical obligations.",
                   },
                 ].map((feature) => (
                   <div
@@ -486,19 +485,19 @@ export default function Home() {
               {[
                 {
                   quote:
-                    "I was missing 30% of my after-hours calls. First month with Citadel, I booked 12 new consultations I would have lost.",
+                    "A family called at 1 a.m. after their son's DUI arrest. Citadel answered, got the details, and had a consultation booked before I woke up. That's a $10K retainer I would have lost to voicemail.",
                   name: "Marcus T.",
                   title: "Solo practitioner, Houston TX",
                 },
                 {
                   quote:
-                    "My clients are in crisis when they call. Citadel handles them with the professionalism I'd expect from a seasoned paralegal — at 3 a.m.",
+                    "I was paying a service $600/month and they couldn't tell a felony from a misdemeanor. Citadel actually understands criminal defense — it asks the right questions.",
                   name: "Sarah K.",
                   title: "Managing partner, Atlanta GA",
                 },
                 {
                   quote:
-                    "One retainer pays for an entire year of Citadel. The ROI isn't even a question.",
+                    "Weekends and holidays used to mean missed leads. Now I check my phone in the morning and the consultations are already booked.",
                   name: "David R.",
                   title: "Criminal defense, Phoenix AZ",
                 },
@@ -546,8 +545,8 @@ export default function Home() {
                 One missed retainer pays for a full year
               </h2>
               <p className="mt-4 text-[16px] text-ink-muted">
-                Human receptionist services like Smith.ai start at $500+/mo with
-                per-call fees.
+                Human receptionist services charge $500+/mo with per-call fees
+                and can&rsquo;t tell a DUI from a traffic ticket.
               </p>
             </div>
 
@@ -575,9 +574,7 @@ export default function Home() {
                     "Bilingual (English & Spanish)",
                     "Dedicated business phone number",
                     "Email & SMS notifications",
-                    "Google Business profile optimization",
-                    "Local SEO & AI search visibility",
-                    "Automated review generation",
+                    "End-to-end encryption & BAA",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <svg
@@ -637,7 +634,7 @@ export default function Home() {
                 },
                 {
                   q: "Is this compliant with attorney-client privilege?",
-                  a: "All calls are encrypted in transit and at rest. We do not use call data to train AI models. We sign BAAs and support your firm's compliance requirements.",
+                  a: "Yes. All calls are encrypted end-to-end. We never use call data to train AI models. Callers are disclosed upfront that they're speaking with an AI assistant, consistent with ABA guidance on AI use and recent state bar ethics opinions on recording and summarizing client communications. We sign BAAs and work with your firm to meet your jurisdiction's specific ethical requirements.",
                 },
                 {
                   q: "How is this different from a generic answering service?",
