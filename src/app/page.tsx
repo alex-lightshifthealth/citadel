@@ -108,81 +108,81 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Hero visual — conversation card */}
-              <div className="hidden lg:block">
-                <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-border">
-                  <div className="flex items-center gap-3 border-b border-border pb-5">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-ink-muted">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    </div>
-                    <div>
-                      <p className="text-[14px] font-medium text-ink">
-                        Incoming call
-                      </p>
-                      <p className="text-[13px] text-ink-muted">
-                        Saturday, 2:14 AM
-                      </p>
-                    </div>
-                    <span className="ml-auto rounded-full bg-green-100 px-2.5 py-1 text-[12px] font-medium text-green-700">
-                      Answered
-                    </span>
-                  </div>
+              {/* Hero visual — sample call on desktop, static card on mobile */}
+              <div>
+                {/* Desktop: interactive sample call */}
+                <div className="hidden lg:block">
+                  <p className="mb-3 text-[13px] font-medium text-ink-muted">
+                    Hear a real intake call
+                  </p>
+                  <CallDemo />
+                </div>
 
-                  <div className="mt-5 space-y-4">
-                    <div className="flex gap-3">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cream text-[11px] font-medium text-ink-muted">
-                        AI
-                      </div>
-                      <div className="rounded-xl rounded-tl-sm bg-cream px-4 py-2.5">
-                        <p className="text-[13px] leading-relaxed text-ink-secondary">
-                          Thank you for calling the Law Office of Marcus Torres.
-                          How can I help you?
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-end gap-3">
-                      <div className="rounded-xl rounded-tr-sm bg-rust/10 px-4 py-2.5">
-                        <p className="text-[13px] leading-relaxed text-ink-secondary">
-                          My son was just arrested for DUI. I need a lawyer right
-                          away.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-3">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cream text-[11px] font-medium text-ink-muted">
-                        AI
-                      </div>
-                      <div className="rounded-xl rounded-tl-sm bg-cream px-4 py-2.5">
-                        <p className="text-[13px] leading-relaxed text-ink-secondary">
-                          I understand — let me get some details so we can help
-                          as quickly as possible. What county was he arrested in?
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-5 rounded-lg bg-warm-bg p-4">
-                    <p className="text-[12px] font-medium text-ink-muted">
-                      Lead captured
-                    </p>
-                    <div className="mt-2 grid grid-cols-2 gap-2 text-[13px]">
-                      <div>
-                        <span className="text-ink-muted">Charge:</span>{" "}
-                        <span className="text-ink">DUI</span>
+                {/* Mobile/tablet: compact static conversation */}
+                <div className="lg:hidden">
+                  <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-border">
+                    <div className="flex items-center gap-2.5 border-b border-border pb-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cream text-ink-muted">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                       </div>
                       <div>
-                        <span className="text-ink-muted">Urgency:</span>{" "}
-                        <span className="font-medium text-rust">High</span>
+                        <p className="text-[13px] font-medium text-ink">Saturday, 2:14 AM</p>
                       </div>
-                      <div>
-                        <span className="text-ink-muted">Status:</span>{" "}
-                        <span className="text-ink">In custody</span>
+                      <span className="ml-auto rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-medium text-green-700">
+                        Answered
+                      </span>
+                    </div>
+
+                    <div className="mt-3 space-y-2.5">
+                      <div className="flex gap-2">
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cream text-[10px] font-medium text-ink-muted">
+                          AI
+                        </div>
+                        <div className="rounded-xl rounded-tl-sm bg-cream px-3 py-2">
+                          <p className="text-[12px] leading-relaxed text-ink-secondary">
+                            Thank you for calling the Law Office of Marcus Torres. How can I help you?
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <span className="text-ink-muted">Consult:</span>{" "}
-                        <span className="text-ink">Booked 9 AM</span>
+
+                      <div className="flex justify-end">
+                        <div className="rounded-xl rounded-tr-sm bg-rust/10 px-3 py-2">
+                          <p className="text-[12px] leading-relaxed text-ink-secondary">
+                            My son was just arrested for DUI. I need a lawyer right away.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cream text-[10px] font-medium text-ink-muted">
+                          AI
+                        </div>
+                        <div className="rounded-xl rounded-tl-sm bg-cream px-3 py-2">
+                          <p className="text-[12px] leading-relaxed text-ink-secondary">
+                            I understand — what county was he arrested in?
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 rounded-lg bg-warm-bg p-3">
+                      <div className="grid grid-cols-2 gap-1.5 text-[12px]">
+                        <div>
+                          <span className="text-ink-muted">Charge:</span>{" "}
+                          <span className="text-ink">DUI</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-muted">Urgency:</span>{" "}
+                          <span className="font-medium text-rust">High</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-muted">Status:</span>{" "}
+                          <span className="text-ink">In custody</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-muted">Consult:</span>{" "}
+                          <span className="text-ink">Booked 9 AM</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -265,26 +265,13 @@ export default function Home() {
                 Talk to Citadel right now
               </h2>
               <p className="mt-4 text-[16px] leading-relaxed text-ink-muted">
-                Try a live conversation with our AI receptionist, or watch a
-                sample call to see how it handles a 2&nbsp;a.m. DUI intake.
+                Talk to Citadel in your browser or have it call your phone.
+                See for yourself how it handles criminal defense intake.
               </p>
             </div>
 
-            <div className="mx-auto mt-12 grid max-w-4xl gap-8 lg:grid-cols-2">
-              {/* Live demo */}
-              <div>
-                <p className="mb-3 text-[13px] font-medium text-ink-muted">
-                  Live demo
-                </p>
-                <LiveDemo />
-              </div>
-              {/* Sample call */}
-              <div>
-                <p className="mb-3 text-[13px] font-medium text-ink-muted">
-                  Sample call
-                </p>
-                <CallDemo />
-              </div>
+            <div className="mx-auto mt-12 max-w-lg">
+              <LiveDemo />
             </div>
           </div>
         </section>
